@@ -17,4 +17,14 @@ class Product extends Model
         'category_id',
         'image'
     ];
+
+    public function category()
+    {
+        /**
+         * Relación: un producto pertenece a una categoría.
+         * La clave foránea es `category_id` en la tabla `products`,
+         * que referencia al campo `id` de la tabla `categories`.
+         */
+        return $this->belongsTo(Category::class);
+    }
 }
